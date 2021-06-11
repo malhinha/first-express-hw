@@ -57,6 +57,18 @@ app.get('/magic/:phrase', (req, res) => {
   res.send(`<h1>${responses[answer]}</h1>`);
 });
 
+// Fibonacci Check
+
+app.get('/fibonacci/:number', (req, res) => {
+  const testNumber = Math.sqrt(5 * (parseInt(req.params.number, 10) ** 2) + 4);
+
+  if (Number.isInteger(testNumber)) {
+    res.send(`<h1>Very good. It is Fibonacci.</h1>`);
+  } else {
+    res.send(`<h1>I can tell this is not a fibonacci number.</h1>`);
+  }
+});
+
 
 /*********************
 PORT LISTENER
